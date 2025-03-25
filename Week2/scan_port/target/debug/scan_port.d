@@ -1,0 +1,1 @@
+D:\Project_2_Rust\Week2\scan_port\target\debug\scan_port.exe: D:\Project_2_Rust\Week2\scan_port\src\common_ports.rs D:\Project_2_Rust\Week2\scan_port\src\error.rs D:\Project_2_Rust\Week2\scan_port\src\main.rs D:\Project_2_Rust\Week2\scan_port\src\model.rs D:\Project_2_Rust\Week2\scan_port\src\ports.rs D:\Project_2_Rust\Week2\scan_port\src\subdomains.rs

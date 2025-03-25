@@ -1,0 +1,1 @@
+D:\Project_2_Rust\Week2\tricoder\target\debug\tricoder.exe: D:\Project_2_Rust\Week2\tricoder\src\common_ports.rs D:\Project_2_Rust\Week2\tricoder\src\error.rs D:\Project_2_Rust\Week2\tricoder\src\main.rs D:\Project_2_Rust\Week2\tricoder\src\model.rs D:\Project_2_Rust\Week2\tricoder\src\ports.rs D:\Project_2_Rust\Week2\tricoder\src\subdomains.rs
