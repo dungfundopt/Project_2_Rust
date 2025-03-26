@@ -26,7 +26,7 @@ pub fn enumerate(http_client: &Client, target: &str) -> Result<Vec<Subdomain>, E
                 .collect::<Vec<String>>()
         })
         .filter(|subdomain: &String| subdomain != target)
-        .filter(|subdomain: &String| !subdomain.contains('*'))
+        .filter(|subdomain: &String| !subdomain.contains('*'))  // lọc subdomain có wildcards
         .collect();
     subdomains.insert(target.to_string());
 

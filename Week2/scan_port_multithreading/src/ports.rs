@@ -19,7 +19,7 @@ pub fn scan_ports(mut subdomain: Subdomain) -> Subdomain {
     subdomain.open_ports = MOST_COMMON_PORTS_100
         .into_par_iter()
         .map(|port| scan_port(socket_addresses[0], *port))
-        .filter(|port| port.is_open) // filter closed ports
+        .filter(|port| port.is_open) // giữ cổng mở
         .collect();
     subdomain
 }
