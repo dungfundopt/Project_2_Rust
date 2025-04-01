@@ -1,3 +1,4 @@
+//cargo run -- olm.vn
 use rayon::prelude::*;
 use reqwest::{blocking::Client, redirect};
 use std::{env, time::Duration};

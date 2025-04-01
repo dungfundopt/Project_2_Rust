@@ -1,4 +1,5 @@
 //(phiên bản đơn luồng)
+//cargo run -- olm.vn
 mod common_ports;
 mod error;
 use crate::error::Error;
