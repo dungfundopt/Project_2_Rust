@@ -1,0 +1,7 @@
+D:\Project_2_Rust\Week5\crawler\target\debug\deps\libfutures_executor-8f4f44d9873b8c59.rmeta: C:\Users\ADMIN\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\futures-executor-0.3.21\src\lib.rs C:\Users\ADMIN\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\futures-executor-0.3.21\src\local_pool.rs C:\Users\ADMIN\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\futures-executor-0.3.21\src\enter.rs
+
+D:\Project_2_Rust\Week5\crawler\target\debug\deps\futures_executor-8f4f44d9873b8c59.d: C:\Users\ADMIN\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\futures-executor-0.3.21\src\lib.rs C:\Users\ADMIN\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\futures-executor-0.3.21\src\local_pool.rs C:\Users\ADMIN\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\futures-executor-0.3.21\src\enter.rs
+
+C:\Users\ADMIN\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\futures-executor-0.3.21\src\lib.rs:
+C:\Users\ADMIN\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\futures-executor-0.3.21\src\local_pool.rs:
+C:\Users\ADMIN\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\futures-executor-0.3.21\src\enter.rs:
