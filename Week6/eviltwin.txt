@@ -1,0 +1,35 @@
+Xây dựng ứng dụng web Captive Portal bằng Rust
+Đây là phần bạn sẽ áp dụng kiến thức về phát triển web bằng Rust từ Chương 9 và 10. Mục tiêu là một web server đơn giản:
+Vai trò:
+Phục vụ file HTML của trang đăng nhập giả (Captive Portal).
+Nhận dữ liệu POST chứa thông tin đăng nhập từ form HTML.
+Lưu trữ thông tin đăng nhập đã thu thập (ví dụ: vào file text).
+Redirect người dùng đến trang web thật (ví dụ: Google, hoặc trang đăng nhập thật) sau khi thu thập thông tin.
+Lựa chọn Framework/Thư viện:
+Sách Chương 9 dùng yew (Wasm) và Chương 10 dùng warp.
+Đối với đồ án nhỏ, một web server Rust đơn giản là đủ. Bạn có thể dùng:
+warp (như trong Chương 10) - khá linh hoạt và dễ xử lý route/body.
+axum (được đề cập trong Chương 10) - API sạch sẽ, tích hợp tốt với tokio.
+Hoặc thậm chí là tokio::net::TcpListener trực tiếp với các crate HTTP cấp thấp hơn (http-body-util, hyper) nếu bạn muốn hiểu sâu hơn.
+Cần các crate khác: serde, serde_json để parse dữ liệu form (nếu dùng JSON), dotenv hoặc clap để đọc cấu hình (port, file HTML path), log, env_logger để ghi log, tokio (nếu dùng async framework).
+Cấu trúc ứng dụng web Rust:
+Đọc cấu hình (ví dụ: port để chạy server, đường dẫn đến file HTML Captive Portal, đường dẫn file để lưu credentials).
+Thiết lập logger.
+Khởi tạo web server.
+Handler cho request GET /: Đọc file HTML Captive Portal và trả về nội dung đó.
+Handler cho request POST /submit-credentials:
+Đọc request body.
+Parse dữ liệu form (username, password). Nếu form gửi dạng application/x-www-form-urlencoded, bạn cần crate để parse nó (ví dụ: serde_urlencoded). Nếu đơn giản gửi JSON, dùng serde_json.
+Trích xuất username và password.
+Lưu credentials: Ghi thông tin đăng nhập vào một file trên Raspberry Pi (ví dụ: /var/log/credentials.txt). CỰC KỲ QUAN TRỌNG: Trong đồ án thật, bạn PHẢI mã hóa hoặc bảo vệ file này. Đối với đồ án học tập, việc ghi ra file text là chấp nhận được để chứng minh concept, nhưng hãy hiểu rõ rủi ro. Sử dụng std::fs::OpenOptions với append mode để ghi thêm vào cuối file.
+Redirect người dùng: Trả về response HTTP với status code 302 (Found) và header Location: http://google.com (hoặc trang web thật).
+Xử lý các request khác (ví dụ: trả về 404 Not Found).
+File HTML Captive Portal: Tạo một file HTML đơn giản với các trường input cho username/password và một form POST dữ liệu đến endpoint /submit-credentials. HTML này nên trông giống trang đăng nhập của mạng WiFi bạn giả mạo để tăng tính lừa đảo.
+
+
+ tập trung vào ứng dụng web Rust Captive Portal:
+Mô tả: Giả định cấu hình mạng đã được thực hiện bởi công cụ khác hoặc thủ công. Xây dựng ứng dụng web Rust đầy đủ hơn để đóng vai trò Captive Portal.
+Tính năng: Serve trang HTML Captive Portal (có thể dùng template engine Rust như tera), xử lý dữ liệu form, lưu trữ credentials an toàn hơn (ví dụ: dùng sqlite database đơn giản với sqlx), redirect người dùng. Có thể thêm chức năng "giả lập" gửi email thông báo credentials mới về cho attacker (lettre).
+Phần mạng: Chỉ cần chạy webserver trên RPi ở một port nhất định và test bằng cách truy cập trực tiếp từ trình duyệt hoặc dùng curl. Không cần cấu hình hostapd, dnsmasq, iptables trong phạm vi đồ án này.
+Ưu điểm: Tập trung sâu vào Rust và phát triển web application.
+Nhược điểm: Bỏ qua phần cấu hình mạng quan trọng của Evil Twin Attack.
