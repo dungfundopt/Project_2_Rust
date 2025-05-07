@@ -1,99 +1,83 @@
-/* File: WEEK7/content/styles.css */
-
-/* Reset một số style mặc định của trình duyệt */
 body {
     margin: 0;
     padding: 0;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif; /* Sử dụng font giống hệ thống */
-    line-height: 1.6; /* Tăng khoảng cách dòng */
+    line-height: 1.6;
 
-    /* Thêm ảnh background chấm bi (bạn cần có file ảnh này) */
-    /* Lưu file ảnh vào content/images/ và cập nhật đường dẫn nếu cần */
-    background-image: url('/images/backgroundbkhn.png'); /* Thay đổi đường dẫn ảnh background */
-    background-repeat: repeat; /* Lặp lại ảnh để phủ nền */
-    /* background-size: cover; */ /* Có thể bỏ size cover nếu repeat */
-    /* background-position: center; */ /* Có thể bỏ position center nếu repeat */
-    /* background-attachment: fixed; */ /* Tùy chọn giữ cố định */
-    background-color: #d11f27; /* Màu nền dự phòng nếu ảnh không load */
+    background-image: url('/images/backgroundbkhn.png');
+    background-repeat: repeat;
+    background-color: #d11f27;
 
     display: flex;
-    justify-content: center; /* Canh giữa container theo chiều ngang */
-    align-items: flex-start; /* Bắt đầu từ đỉnh trang */
+    justify-content: center;
+    align-items: flex-start;
     min-height: 100vh;
-    padding: 30px 0; /* Khoảng trống trên dưới container */
+    padding: 30px 0;
     box-sizing: border-box;
 }
 
 .container {
-    width: 90%; /* Chiều rộng container */
-    max-width: 400px; /* Giảm chiều rộng tối đa một chút cho cảm giác gọn gàng */
-    background-color: #fff; /* Nền trắng cho phần chính */
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Đổ bóng rõ hơn một chút */
-    border-radius: 8px; /* Bo tròn góc */
+    width: 90%;
+    max-width: 400px;
+    background-color: #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
     overflow: hidden;
-    display: flex; /* Sử dụng flexbox để sắp xếp header, main, footer theo cột */
+    display: flex;
     flex-direction: column;
-    align-items: center; /* Canh giữa các mục con (header, main, footer) */
-    text-align: center; /* Canh giữa chữ trong container */
+    align-items: center;
+    text-align: center;
 }
 
 .header {
     width: 100%;
-    background-color: #d11f27; /* Nền đỏ đơn giản */
+    background-color: #d11f27;
     color: white;
-    padding: 20px 0; /* Padding trên dưới */
+    padding: 20px 0;
     box-sizing: border-box;
 }
 
 .header-content {
     display: flex;
-    justify-content: center; /* Canh giữa nội dung trong header */
+    justify-content: center;
     align-items: center;
-    /* Xóa margin-bottom */
     width: 100%;
     padding: 0 20px;
     box-sizing: border-box;
 }
 
 .logo-area {
-    margin-right: 20px; /* Khoảng trống giữa logo và chữ */
-    /* Xóa auto margin và flex-shrink */
+    margin-right: 20px;
 }
 
 .logo {
-    height: 60px; /* Giảm chiều cao logo một chút cho cân đối */
+    height: 60px;
     display: block;
 }
 
 .header-text-block {
     display: flex;
-    flex-direction: column; /* Sắp xếp chữ ĐẠI HỌC và BÁCH KHOA theo cột */
-    align-items: flex-start; /* Căn trái chữ trong khối text */
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 .university-title {
-    font-size: 1em; /* Kích thước chữ ĐẠI HỌC nhỏ hơn */
-    font-weight: normal; /* Không in đậm */
-    color: white; /* Màu trắng */
-    margin: 0; /* Bỏ margin mặc định */
+    font-size: 1em;
+    font-weight: normal;
+    color: white;
+    margin: 0;
 }
 
 .bkhn-title {
-    font-size: 1.8em; /* Kích thước chữ BÁCH KHOA lớn, in đậm */
+    font-size: 1.8em;
     font-weight: bold;
-    color: white; /* Màu trắng */
-    margin: 0; /* Bỏ margin mặc định */
+    color: white;
+    margin: 0;
 }
-
-/* Xóa style cho .bkhn-bar */
-/* .bkhn-bar { display: none; } */
-
 
 .main-content {
     width: 90%;
     padding: 30px 20px;
-    /* Xóa text-align: center; nếu muốn các label căn trái */
-    /* text-align: center; */
 }
 
 .main-title {
@@ -104,37 +88,34 @@ body {
 }
 
 .subtitle {
-    color: #555; /* Chữ phụ đề màu xám */
-    font-size: 1em; /* Kích thước phụ đề nhỏ hơn */
-    margin: 0; /* Bỏ margin mặc định */
-    line-height: 1.3; /* Tăng khoảng cách dòng cho phụ đề */
+    color: #555;
+    font-size: 1em;
+    margin: 0;
+    line-height: 1.3;
 }
-.subtitle:first-of-type { margin-top: 5px; } /* Khoảng trống sau tiêu đề chính */
+.subtitle:first-of-type { margin-top: 5px; }
 
 
 .login-form {
     width: 100%;
     margin-top: 30px;
     display: grid;
-    /* Thay đổi grid template columns để label và input/hint nằm trên 2 cột riêng */
-    grid-template-columns: auto 1fr; /* Cột 1 cho label (tự động), cột 2 cho input + hint (phần còn lại) */
-    gap: 10px 15px; /* Khoảng cách giữa các hàng (10px) và cột (15px) */
+    grid-template-columns: auto 1fr;
+    gap: 10px 15px;
     align-items: center;
-    text-align: left; /* Đảm bảo label và input căn trái */
+    text-align: left;
 }
 
 .form-group {
-    /* Xóa grid-column: span 2; */
-    display: contents; /* Không tạo box cho form-group, các con trực tiếp vào grid */
+    display: contents;
 }
 
 .form-group label {
     font-weight: bold;
-    /* Xóa margin-bottom */
     color: #555;
-    grid-column: 1; /* Đặt label vào cột đầu tiên của grid */
-    margin-right: 10px; /* Khoảng trống giữa label và input */
-    white-space: nowrap; /* Ngăn label xuống dòng */
+    grid-column: 1;
+    margin-right: 10px;
+    white-space: nowrap;
 }
 
 .form-group input[type="text"],
@@ -145,31 +126,28 @@ body {
     border-radius: 4px;
     box-sizing: border-box;
     font-size: 1em;
-    grid-column: 2; /* Đặt input vào cột thứ hai của grid */
+    grid-column: 2;
 }
 
 .hint {
     font-size: 0.8em;
     color: #888;
-    /* Xóa margin-top */
-    grid-column: 2; /* Đặt hint vào cột thứ hai của grid */
-    margin-bottom: 15px; /* Khoảng trống dưới hint */
+    grid-column: 2;
+    margin-bottom: 15px;
 }
-
-/* Điều chỉnh margin-bottom cho hint cuối cùng nếu cần */
 .form-group:last-of-type .hint {
     margin-bottom: 0;
 }
 
 
 .connect-button {
-    grid-column: span 2; /* Nút chiếm toàn bộ chiều rộng grid */
-    width: 80%; /* Chiều rộng nút */
-    margin: 20px auto 0 auto; /* Canh giữa nút và khoảng trống trên */
+    grid-column: span 2;
+    width: 80%;
+    margin: 20px auto 0 auto;
     padding: 12px 20px;
-    background: linear-gradient(to bottom, #ffda63, #f0a61d); /* Gradient màu vàng đậm hơn */
-    color: #444; /* Màu chữ xám đậm */
-    border: 1px solid #f0a61d; /* Viền cùng màu với gradient */
+    background: linear-gradient(to bottom, #ffda63, #f0a61d);
+    color: #444;
+    border: 1px solid #f0a61d;
     border-radius: 5px;
     font-size: 1.2em;
     font-weight: bold;
@@ -178,24 +156,17 @@ body {
 }
 
 .connect-button:hover {
-    background: linear-gradient(to bottom, #f0a61d, #ffda63); /* Đảo ngược gradient khi hover */
+    background: linear-gradient(to bottom, #f0a61d, #ffda63);
 }
 
 .footer {
     width: 100%;
-    background-color: #eee; /* Nền xám nhạt hơn */
+    background-color: #eee; 
     color: #555;
     padding: 15px 0;
     text-align: center;
     font-size: 0.9em;
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
-    margin-top: 30px; /* Khoảng trống trên footer */
+    margin-top: 30px; 
 }
-
-/* Nếu bạn thêm ảnh logo vào footer */
-/* .footer img {
-    height: 20px;
-    margin: 0 5px;
-    vertical-align: middle;
-} */

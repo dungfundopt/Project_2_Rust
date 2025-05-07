@@ -4,10 +4,10 @@ version = "0.1.0"
 edition = "2024"
 
 [dependencies]
-axum = "0.7" # Hoặc phiên bản mới nhất ổn định
-tokio = { version = "1", features = ["full"] } # Cần async runtime, dùng feature "full" cho đơn giản
+axum = "0.7"
+tokio = { version = "1", features = ["full"] }
 tower-http = { version = "0.5", features = ["fs", "add-extension"] } 
-serde = { version = "1.0", features = ["derive"] } # <-- Thêm serde với feature "derive"
+serde = { version = "1.0", features = ["derive"] }
 serde_json = "1.0"
 sqlx = { version = "0.6", features = ["runtime-tokio-rustls", "postgres", "uuid", "chrono", "json"] }
 dotenv = "0.15"
