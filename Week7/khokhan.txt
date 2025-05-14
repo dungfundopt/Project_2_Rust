@@ -1,0 +1,6 @@
+khó khăn đầu tiên là soft ap không cung cấp các công cụ có khả năng của iptables hay dnsmaq như linux.
+thứ 2 là driver usb wifi trên laptop không hỗ trợ monitor mode và packet injection.
+nếu làm thì cần cấu hình dns và địa chỉ ip tĩnh trên máy nạn nhân
+
+dnsmasq: Công cụ nhỏ gọn cung cấp DHCP (cấp IP) và DNS (phân giải tên miền). Trong Evil Twin, nó dùng để cấp IP cho nạn nhân và "đánh lừa" DNS để mọi yêu cầu tên miền đều trỏ về IP của kẻ tấn công (máy ảo của bạn).
+iptables: Công cụ tường lửa mạnh mẽ của Linux. Được dùng để chuyển hướng (redirect) lưu lượng mạng. Trong Evil Twin, nó dùng để chuyển hướng mọi traffic HTTP (port 80) và có thể cả HTTPS (port 443) từ nạn nhân đến port mà captive portal của bạn đang chạy (port 3000).

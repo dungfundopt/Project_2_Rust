@@ -1,172 +1,206 @@
+/* Basic reset and overall layout */
 body {
     margin: 0;
-    padding: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif; /* Sử dụng font giống hệ thống */
-    line-height: 1.6;
-
-    background-image: url('/images/backgroundbkhn.png');
-    background-repeat: repeat;
-    background-color: #d11f27;
-
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    min-height: 100vh;
-    padding: 30px 0;
-    box-sizing: border-box;
-}
-
-.container {
-    width: 90%;
-    max-width: 400px;
-    background-color: #fff;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    border-radius: 8px;
-    overflow: hidden;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0; /* Màu nền phụ nếu ảnh không tải được */
     display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
+    min-height: 100vh; /* Đảm bảo trang chiếm toàn bộ chiều cao màn hình */
 }
 
-.header {
-    width: 100%;
-    background-color: #d11f27;
-    color: white;
-    padding: 20px 0;
-    box-sizing: border-box;
+/* Header Styling */
+header {
+    background-color: white;
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .header-content {
     display: flex;
-    justify-content: center;
     align-items: center;
-    width: 100%;
-    padding: 0 20px;
-    box-sizing: border-box;
+    max-width: 1200px; /* Giới hạn chiều rộng nội dung header */
+    margin: 0 auto; /* Căn giữa nội dung header */
 }
 
-.logo-area {
-    margin-right: 20px;
+header img {
+    height: 40px; /* Điều chỉnh chiều cao logo */
+    margin-right: 15px;
 }
 
-.logo {
-    height: 60px;
-    display: block;
-}
-
-.header-text-block {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
-
-.university-title {
-    font-size: 1em;
-    font-weight: normal;
-    color: white;
+.university-info h1 {
+    font-size: 1.2em;
     margin: 0;
+    color: #c00; /* Màu đỏ */
 }
 
-.bkhn-title {
-    font-size: 1.8em;
-    font-weight: bold;
-    color: white;
-    margin: 0;
-}
-
-.main-content {
-    width: 90%;
-    padding: 30px 20px;
-}
-
-.main-title {
-    color: #d11f27;
-    font-size: 1.8em;
-    margin-bottom: 5px;
-    font-weight: bold;
-}
-
-.subtitle {
-    color: #555;
-    font-size: 1em;
-    margin: 0;
-    line-height: 1.3;
-}
-.subtitle:first-of-type { margin-top: 5px; }
-
-
-.login-form {
-    width: 100%;
-    margin-top: 30px;
-    display: grid;
-    grid-template-columns: auto 1fr;
-    gap: 10px 15px;
-    align-items: center;
-    text-align: left;
-}
-
-.form-group {
-    display: contents;
-}
-
-.form-group label {
-    font-weight: bold;
-    color: #555;
-    grid-column: 1;
-    margin-right: 10px;
-    white-space: nowrap;
-}
-
-.form-group input[type="text"],
-.form-group input[type="password"] {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    font-size: 1em;
-    grid-column: 2;
-}
-
-.hint {
+.university-info p {
     font-size: 0.8em;
-    color: #888;
-    grid-column: 2;
+    margin: 0;
+    color: #333;
+}
+
+/* Phần MAIN: Nơi áp dụng ảnh nền cổng parabol */
+main {
+    flex-grow: 1; /* Chiếm hết không gian trống còn lại */
+    background-image: url('images/parabol.png'); /* <<< Dòng này áp dụng ảnh nền */
+    background-size: cover; /* Phóng to/thu nhỏ ảnh để phủ kín khu vực main */
+    background-position: center; /* Căn giữa ảnh nền */
+    background-repeat: no-repeat; /* Không lặp lại ảnh */
+    
+    display: flex; /* Dùng flexbox để căn giữa khối đăng nhập */
+    justify-content: center; /* Căn giữa ngang */
+    align-items: center; /* Căn giữa dọc */
+    padding: 20px; /* Thêm padding xung quanh nội dung */
+}
+
+/* Login Container: Khối màu trắng hơi trong suốt nằm trên ảnh nền */
+.login-container {
+    background-color: rgba(255, 255, 255, 0.9); /* Nền trắng hơi trong suốt */
+    padding: 30px;
+    border-radius: 8px;
+    text-align: center;
+    width: 350px; /* Chiều rộng khối đăng nhập (có thể điều chỉnh) */
+    max-width: 90%; /* Tối đa 90% chiều rộng màn hình (để responsive) */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Đổ bóng */
+}
+
+.login-container h2 {
+    font-size: 1.5em;
+    margin-top: 0;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.hust-logo-text {
+    font-size: 3em;
+    font-weight: bold;
+    color: #c00;
     margin-bottom: 15px;
 }
-.form-group:last-of-type .hint {
-    margin-bottom: 0;
+
+.service-text {
+    font-size: 0.9em;
+    color: #555;
+    margin-bottom: 25px;
+}
+
+/* Input Wrapper (bao gồm icon và ô input) */
+.input-wrapper {
+    display: flex;
+    align-items: center;
+    background-color: #eef; /* Màu nền nhạt cho ô input */
+    border-radius: 4px;
+    margin-bottom: 15px;
+    padding: 10px 15px;
+}
+
+.input-wrapper .icon {
+    margin-right: 10px;
+    color: #555;
+    font-size: 1.2em;
+}
+
+.input-wrapper input {
+    border: none;
+    outline: none;
+    flex-grow: 1; /* Ô input chiếm hết không gian còn lại */
+    background: none; /* Nền trong suốt để thấy màu nền #eef của wrapper */
+    font-size: 1em;
+    color: #333;
+}
+
+.input-wrapper input::placeholder {
+    color: #aaa; /* Màu chữ placeholder */
 }
 
 
-.connect-button {
-    grid-column: span 2;
-    width: 80%;
-    margin: 20px auto 0 auto;
+/* Connect Button Styling */
+.login-container button {
+    width: 100%; /* Nút chiếm toàn bộ chiều rộng khối đăng nhập */
+    background-color: #444; /* Nền xám đậm */
+    color: white;
     padding: 12px 20px;
-    background: linear-gradient(to bottom, #ffda63, #f0a61d);
-    color: #444;
-    border: 1px solid #f0a61d;
-    border-radius: 5px;
-    font-size: 1.2em;
-    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.1em;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
-.connect-button:hover {
-    background: linear-gradient(to bottom, #f0a61d, #ffda63);
+.login-container button:hover {
+    background-color: #555; /* Xám nhạt hơn khi hover */
 }
 
-.footer {
-    width: 100%;
-    background-color: #eee; 
-    color: #555;
-    padding: 15px 0;
-    text-align: center;
-    font-size: 0.9em;
-    border-bottom-left-radius: 8px;
-    border-bottom-right-radius: 8px;
-    margin-top: 30px; 
+/* Footer Styling */
+footer {
+    background-color: #c00; /* Nền đỏ */
+    color: white;
+    padding: 10px 20px;
+    font-size: 0.8em;
+    display: flex;
+    justify-content: space-between; /* Đẩy nội dung ra hai bên */
+    align-items: center;
+    flex-wrap: wrap; /* Cho phép xuống dòng trên màn hình nhỏ */
+}
+
+.footer-left, .footer-right {
+    flex: 1; /* Chia sẻ không gian ngang */
+    min-width: 250px; /* Giới hạn nhỏ nhất trước khi xuống dòng */
+}
+
+.footer-left {
+    text-align: left;
+     margin-right: 10px;
+}
+
+.footer-right {
+    text-align: right;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+    margin-left: 5px;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+.powered-hust {
+    font-weight: bold;
+}
+
+/* Basic Responsiveness */
+@media (max-width: 600px) {
+    header img {
+        height: 30px;
+        margin-right: 10px;
+    }
+     .university-info h1 {
+        font-size: 1em;
+    }
+     .university-info p {
+        font-size: 0.7em;
+    }
+    .login-container {
+        padding: 20px;
+    }
+    .hust-logo-text {
+        font-size: 2.5em;
+    }
+    footer {
+        flex-direction: column; /* Xếp footer dọc */
+        text-align: center;
+    }
+    .footer-left, .footer-right {
+        text-align: center;
+        margin-right: 0;
+        margin-bottom: 5px;
+    }
+     .footer-left a {
+         margin-left: 0;
+         display: block;
+         margin-top: 3px;
+     }
 }

