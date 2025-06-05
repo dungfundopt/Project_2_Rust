@@ -1,0 +1,1 @@
+fn() -> impl std::future::Future<Output = impl IntoResponse> {redirect_to_root_handler}
